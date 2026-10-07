@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Form Pemesanan Tiket</h1>
-    <form action="prosesPesan.php" method="post">
+    <form action="prosesPesan.php" method="post" enctype="multipart/form-data">
         <p>
         <label>Nama Pembeli:</label><br>
         <input type="text" name="namaPembeli" required>
@@ -21,6 +21,10 @@
         <p>
         <label>Jumlah Tiket:</label><br>
         <input type="number" name="jumlahTiket" min="1" max="4" required>
+        </p>
+        <p>
+        <label>Bukti Pembayaran:</label><br>
+        <input type="file" name="buktiBayar" accept=".jpg,.jpeg,.png" required>
         </p>
         <button type="submit">War Sekarang!</button>
     </form>
