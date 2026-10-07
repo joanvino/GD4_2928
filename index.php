@@ -51,7 +51,7 @@
         $hargaSetelahDiskon = $hargaAsli - ($hargaAsli * $persenDiskon / 100);
         $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
     ?>
-s
+
     <?php foreach ($daftarKonser as $konser) { ?>
         <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
         <h3><?php echo $konser["nama"]; ?></h3>
