@@ -28,6 +28,11 @@
             ];
 
         echo "Selamat datang di TiketWar - war tiket konser paling gercep banget!";
+
+        $hargaAsli = $daftarKonser[0]["harga"];
+        $persenDiskon = 20;
+        $hargaSetelahDiskon = $hargaAsli - ($hargaAsli * $persenDiskon / 100);
+        $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
     ?>
 
     <p>Konser: <?php echo $daftarKonser[0]["nama"]; ?></p>
@@ -35,5 +40,8 @@
     <p>Kategori: <?php echo $daftarKonser[0]["kategori"]; ?></p>
     <p>Konser terdekat: <?php echo $daftarKonser[0]["nama"]; ?></p>
     <p>Tanggal: <?php echo $daftarKonser[0]["tanggal"]; ?></p>
+    <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
+    <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon;
+    ?></p>
 </body>
 </html>
