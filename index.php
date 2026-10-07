@@ -29,7 +29,7 @@
 
         echo "Selamat datang di TiketWar - war tiket konser paling gercep banget!";
 
-        $sisaTiket = $daftarKonser[0]["harga"] > 0 ? 15 : 0; // contoh sederhana
+        $sisaTiket = $daftarKonser[0]["harga"] > 0 ? 15 : 0;
         if ($sisaTiket > 10) {
             $statusTiket = "Masih Banyak";
         } elseif ($sisaTiket > 0) {
@@ -46,22 +46,22 @@
             default: $badge = "Kategori tidak dikenali";
         }
 
-
         $hargaAsli = $daftarKonser[0]["harga"];
         $persenDiskon = 20;
         $hargaSetelahDiskon = $hargaAsli - ($hargaAsli * $persenDiskon / 100);
         $tiketMasihAda = $daftarKonser[0]["harga"] > 0;
     ?>
-
-    <p>Konser: <?php echo $daftarKonser[0]["nama"]; ?></p>
-    <p>Harga: Rp<?php echo $daftarKonser[0]["harga"]; ?></p>
-    <p>Kategori: <?php echo $daftarKonser[0]["kategori"]; ?></p>
+s
+    <?php foreach ($daftarKonser as $konser) { ?>
+        <div style="border: 1px solid #ccc; padding: 12px; margin-bottom: 8px;">
+        <h3><?php echo $konser["nama"]; ?></h3>
+        <p>Tanggal: <?php echo $konser["tanggal"]; ?></p>
+        <p>Kategori: <?php echo $konser["kategori"]; ?></p>
+        <p>Harga: Rp<?php echo number_format($konser["harga"], 0, ",", "."); ?></p>
+    </div>
+    <?php } ?>  
     <p>Status: <?php echo $statusTiket; ?></p>
-    <p>Kategori: <?php echo $badge; ?></p>
-    <p>Konser terdekat: <?php echo $daftarKonser[0]["nama"]; ?></p>
-    <p>Tanggal: <?php echo $daftarKonser[0]["tanggal"]; ?></p>
     <p>Harga asli: Rp<?php echo $hargaAsli; ?></p>
-    <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon;
-    ?></p>
+    <p>Setelah diskon <?php echo $persenDiskon; ?>%: Rp<?php echo $hargaSetelahDiskon; ?></p>
 </body>
 </html>
